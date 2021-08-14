@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ScrollView, StatusBar, StyleSheet } from 'react-native';
+import { LayoutAnimation, ScrollView, StatusBar, StyleSheet } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import CameraRoll from "@react-native-community/cameraroll";
 import Carousel from 'react-native-snap-carousel';
@@ -131,7 +131,10 @@ const Home = () => {
                 photosUri.length > 0 &&
                 <View
                     style={galleryFullscreen ? styles.galleryFull : styles.galleryMini}
-                    onPress={galleryFullscreen ? undefined : () => setGalleryFullScreen(true)}
+                    onPress={galleryFullscreen ? undefined : () => {
+                        //LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
+                        setGalleryFullScreen(true);
+                    }}
                     activeOpacity={1}
                 >
                     <Carousel
@@ -194,13 +197,15 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 16,
         left: 32,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        borderRadius: 12
     },
     galleryFull: {
         width: W(100),
         left: 0,
         position: 'absolute',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        zIndex: 99
     },
 
     mainButtonBorder: {
