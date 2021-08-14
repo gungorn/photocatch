@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "baseUrl": ".",
+        "module": "commonjs",
+        "paths": {
+            "~/*": [
+                "./src/*"
+            ],
+            "~screens": [
+                "./src/screens/index"
+            ],
+            "~assets": [
+                "./src/assets/index"
+            ],
+            "~redux": [
+                "./src/redux/index"
+            ],
+            "~components": [
+                "./src/components/index"
+            ],
+            "~utils/*": [
+                "./src/utils/*"
+            ],
+            "~configs": [
+                "./src/configs/index"
+            ],
+            "~theme": [
+                "./src/theme/index"
+            ]
+        }
+    },
+    "exclude": [
+        "./node_modules"
+    ]
+}
